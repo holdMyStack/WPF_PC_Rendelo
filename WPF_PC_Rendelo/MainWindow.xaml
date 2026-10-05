@@ -1,0 +1,160 @@
+﻿<Window x:Class="WPF_PC_Rendelo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_PC_Rendelo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="850" Width="475"
+        ResizeMode="NoResize">
+    <StackPanel Margin="16">
+        <TextBlock Text="PC Rendelő"
+                   FontFamily="Jokerman"
+                   HorizontalAlignment="Center"
+                   FontSize="24"
+                   Margin="0,32"/>
+
+        <Grid ColumnDefinitions="*,auto,*"
+              Margin="0,16">
+            <Separator Grid.Column="0" />
+
+            <TextBlock Grid.Column="1"
+                       Text="👤 Vásárló Adatai"
+                       FontStyle="Italic" 
+                       FontSize="10"
+                       Margin="16,0" />
+
+            <Separator Grid.Column="2" />
+        </Grid>
+
+        <TextBlock Text="Név" />
+        <TextBox x:Name="inputName" Margin="0,0,0,12" />
+
+        <TextBlock Text="Életkor" />
+        <TextBox x:Name="inputAge" Margin="0,0,0,12" />
+
+        <TextBlock Text="E-mail cím" />
+        <TextBox x:Name="inputEmail" Margin="0,0,0,12" />
+        
+        <Grid ColumnDefinitions="*,auto,*"
+              Margin="0,16">
+            <Separator Grid.Column="0" />
+
+            <TextBlock Grid.Column="1"
+                Text="🖥️ Specifikációk"
+                FontStyle="Italic" 
+                FontSize="10"
+                Margin="16,0" />
+
+            <Separator Grid.Column="2" />
+        </Grid>
+
+        <TextBlock Text="Processzor" />
+        <ComboBox x:Name="comboProcessor" SelectedIndex="0" Margin="0,0,0,12">
+            <ComboBoxItem Content="-" IsEnabled="False" />
+            <ComboBoxItem Content="Intel Core i5 – 70 000 Ft" />
+            <ComboBoxItem Content="Intel Core i7 – 110 000 Ft" />
+            <ComboBoxItem Content="AMD Ryzen 5 – 65 000 Ft" />
+            <ComboBoxItem Content="AMD Ryzen 7 – 105 000 Ft" />
+        </ComboBox>
+        
+        <TextBlock Text="Videokártya" />
+        <Grid ColumnDefinitions="*,*,*" Margin="0,0,0,12">
+            <RadioButton x:Name="radioGPU4060" Grid.Column="0" GroupName="GPUType">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock Text="🕹️ RTX 4060" />
+                    <TextBlock Text="⚡ Entry-level" />
+                    <TextBlock Text="💵 130 000 Ft" />
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Name="radioGPU4070" Grid.Column="1" GroupName="GPUType">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock Text="🕹️ RTX 4070" />
+                    <TextBlock Text="⚡ Mid-range" />
+                    <TextBlock Text="💵 220 000 Ft" />
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Name="radioGPU4080" Grid.Column="2" GroupName="GPUType">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock Text="🕹️ RTX 4080" />
+                    <TextBlock Text="⚡ High-end" />
+                    <TextBlock Text="💵 400 000 Ft" />
+                </StackPanel>
+            </RadioButton>
+        </Grid>
+
+        <TextBlock Text="Memória mennyiség" />
+        <Grid ColumnDefinitions="*,*,*" Margin="0,0,0,12">
+            <RadioButton x:Name="radioRAM16" Grid.Column="0" GroupName="RAMSize">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock Text="⚡ 16 GB" />
+                    <TextBlock Text="✨ Böngészés" />
+                    <TextBlock Text="💵 20 000 Ft" />
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Name="radioRAM32" Grid.Column="1" GroupName="RAMSize">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock Text="⚡ 32 GB" />
+                    <TextBlock Text="✨ Videójátékok" />
+                    <TextBlock Text="💵 35 000 Ft" />
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Name="radioRAM64" Grid.Column="2" GroupName="RAMSize">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock Text="⚡ 64 GB" />
+                    <TextBlock Text="✨ Szakértői feladatok" />
+                    <TextBlock Text="💵 65 000 Ft" />
+                </StackPanel>
+            </RadioButton>
+        </Grid>
+
+        <TextBlock Text="Darabszám" />
+        <TextBox x:Name="inputCount" Margin="0,0,0,12" />
+
+        <TextBlock Text="Extrák" />
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*,*" Margin="0,0,0,12">
+            <CheckBox x:Name="checkRGB" Grid.Column="0" Grid.Row="0" Margin="0,0,0,4">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock Text="🚦 RGB Világítás" />
+                    <TextBlock Text="💵 15 000 Ft" />
+                </StackPanel>
+            </CheckBox>
+
+            <CheckBox x:Name="checkWindows" Grid.Column="1" Grid.Row="0" Margin="0,0,0,4">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <TextBlock Text=" ⊞  Windows 11" />
+                    <TextBlock Text="💵 15 000 Ft" />
+                </StackPanel>
+            </CheckBox>
+
+            <CheckBox x:Name="checkKeyboard" Grid.Column="0" Grid.Row="1">
+                <StackPanel>
+                    <TextBlock Text="⌨️ Gamer Billentyűzet" />
+                    <TextBlock Text="💵 25 000 Ft" />
+                </StackPanel>
+            </CheckBox>
+
+            <CheckBox x:Name="checkMouse" Grid.Column="1" Grid.Row="1">
+                <StackPanel>
+                    <TextBlock Text="🐁 Gamer egér" />
+                    <TextBlock Text="💵 18 000 Ft" />
+                </StackPanel>
+            </CheckBox>
+        </Grid>
+
+        <TextBlock Text="Garancia" />
+        <ComboBox x:Name="comboWarranty" SelectedIndex="0" Margin="0,0,0,24">
+            <ComboBoxItem Content="1 év garancia - ingyenes" />
+            <ComboBoxItem Content="3 év garancia - 30 000 Ft" />
+            <ComboBoxItem Content="5 év garancia - 60 000 Ft" />
+        </ComboBox>
+
+        <CheckBox x:Name="checkAcceptTerms" Content="Elolvastam és elfogadom a vásárlási feltételeket." Margin="0,0,0,12" />
+
+        <Button Content="Vásárlás" Click="Rendeles_Click" />
+    </StackPanel>
+</Window>
