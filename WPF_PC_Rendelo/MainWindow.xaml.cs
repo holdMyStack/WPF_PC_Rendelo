@@ -273,17 +273,24 @@ namespace WPF_PC_Rendelo
                 finalCost = (int) (finalCost * 0.95);
             }
 
+            string extrasString = string.Join(",", FilterList(extraNames, extraConditions));
+
+            if (extrasString.Length == 0)
+            {
+                extrasString = "Nincs";
+            }
+
             string orderSummary =
                 $"==== Rendelés Összefoglalő ====\n\n" +
                 $"Rendelő:\n" +
                 $"    Név: {inputName.Text}\n" +
-                $"    Kor: {inputAge.Text}\n" +
+                $"    Életkor: {inputAge.Text}\n" +
                 $"    E-mail: {inputEmail.Text}\n\n" +
                 $"Specifikációk:\n" +
                 $"    CPU: {processorNames[comboProcessor.SelectedIndex - 1]}\n" +
                 $"    GPU: {SelectFromList(gpuNames, gpuConditions)}\n" +
                 $"    RAM: {SelectFromList(ramNames, ramConditions)}\n" +
-                $"    Extrák: {string.Join(",", FilterList(extraNames, extraConditions))}\n\n" +
+                $"    Extrák: {extrasString}\n\n" +
                 $"Rendelés:\n" +
                 $"    Garancia: {warrantyNames[comboWarranty.SelectedIndex]}\n" +
                 $"    Egységár: {unitCost} Ft\n" +
